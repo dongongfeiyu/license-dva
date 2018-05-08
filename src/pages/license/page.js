@@ -18,7 +18,7 @@ export default class License extends PureComponent {
     }
     render() {
         const columns = [{
-            title: '项目',
+            title: '项目名称',
             dataIndex: 'projectName'
         }, {
             title: '申请人',

@@ -8,7 +8,6 @@ export default {
     },
     reducers: {
         queryList(state, { payload: data }) {
-            console.log(data)
             return { ...state, list: data.rows, total: data.total }
         }
     },
