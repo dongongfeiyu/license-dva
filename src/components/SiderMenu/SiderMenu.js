@@ -1,11 +1,17 @@
-import React, { PureComponent } from 'react'
-import { Layout, Icon, Menu } from 'antd'
-import Link from 'umi/link'
-import styles from './index.less'
-import menuData from './menuData'
+/*
+ * @Author: Haijun Zhang
+ * @Date: 2018-07-16 14:11:17
+ * @Last Modified by: Haijun Zhang
+ * @Last Modified time: 2018-07-16 14:11:47
+ */
+import React, {PureComponent} from 'react';
+import {Layout, Icon, Menu} from 'antd';
+import Link from 'umi/link';
+import menuData from './menuData.js';
+import styles from './index.scss'
 
-const { Sider } = Layout
-const { SubMenu } = Menu
+const {Sider} = Layout;
+const {SubMenu} = Menu;
 export default class SiderMenu extends PureComponent {
   getNavMenuItems(menuData) {
     if (!menuData) return []
@@ -31,15 +37,15 @@ export default class SiderMenu extends PureComponent {
       }
     })
   }
-  render() {
-    const { collapsed } = this.props
+  render () {
+    const { collapsed } = this.props;
     return (
       <Sider
-        trigger={null}
-        collapsible
-        collapsed={collapsed}>
+      trigger={null}
+      collapsible
+      collapsed={collapsed}>
         <div className={styles.logo}>
-          <img src='/public/img/logo.png' alt='logo' />
+          <img src={require('../../assets/logo.png')} alt='logo' />
           <h1>License平台</h1>
         </div>
         <Menu
@@ -50,5 +56,4 @@ export default class SiderMenu extends PureComponent {
       </Sider>
     )
   }
-
 }

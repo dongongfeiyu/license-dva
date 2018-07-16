@@ -4,7 +4,9 @@ export default {
     "/api": {
       "target": "http://10.20.4.81:8080",
       "changeOrigin": true,
-      "pathRewrite": { "^/api": "" }
+      "pathRewrite": {
+        "^/api": ""
+      }
     }
   },
   "alias": {
@@ -13,5 +15,6 @@ export default {
     "components": path.resolve(__dirname, "src/components"),
     "services": path.resolve(__dirname, "src/services"),
     "models": path.resolve(__dirname, "src/models"),
-  }
+  },
+  sass: {}
 }

@@ -1,8 +1,11 @@
+/**
+ * Created by Zhang Haijun on 2018/7/16.
+ */
 import React, {PureComponent} from 'react'
 import {Layout, Icon, Dropdown, Menu, Avatar} from 'antd'
-import styles from './index.less'
+import styles from './index.scss'
 
-const {Header} = Layout
+const {Header} = Layout;
 export default class Headers extends PureComponent {
   render() {
     const { userData, collapsed, handleCollapsed} = this.props
@@ -22,11 +25,11 @@ export default class Headers extends PureComponent {
     );
     return (
       <Header className={styles.header}>
-        <Icon className={styles.trigger} type={collapsed ? 'menu-unfold' : 'menu-fold'} onClick={handleCollapsed}/>
+        <Icon className={styles.trigger} type={collapsed ? 'menu-unfold' : 'menu-fold'} onClick={()=>handleCollapsed(!collapsed)}/>
         <div className={styles.right}>
           <Dropdown overlay={menu}>
               <span className={`${styles.action} ${styles.account}`}>
-                <Avatar size="large" className={styles.avatar} src='/public/img/user.png'/>
+                <Avatar size="large" className={styles.avatar} src={require('@/assets/user.png')}/>
                 <span className={styles.name}>{userData.name}</span>
               </span>
           </Dropdown>
@@ -35,3 +38,4 @@ export default class Headers extends PureComponent {
     )
   }H
 }
+

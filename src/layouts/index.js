@@ -1,14 +1,11 @@
-/**
- * Created by Zhang Haijun on 2018/5/8.
+/*
+ * @Author: Haijun Zhang 
+ * @Date: 2018-07-16 10:07:34 
+ * @Last Modified by: Haijun Zhang
+ * @Last Modified time: 2018-07-16 10:11:22
  */
-import React from 'react'
-import BasicLayout from './BasicLayout'
-import LoginLayout from './LoginLayout'
+import React from "react";
+import BasicLayout from "./BasicLayout.js";
 export default function(props) {
-  if ( props.location.pathname === '/login' ) {
-    return <LoginLayout>{props.children}</LoginLayout>
-  }
-  return (
-    <BasicLayout>{props.children}</BasicLayout>
-  );
+  return <BasicLayout>{props.children}</BasicLayout>;
 }
